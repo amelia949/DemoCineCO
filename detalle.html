@@ -39,6 +39,10 @@
 			<p>G&eacute;nero: <span data-bind="text: genero"/></p>
 			<p>Clasificaci&oacute;n: <span data-bind="text: clasificacion"/></p>
 			<p>Duraci&oacute;n: <span data-bind="text: duracion"/> min</p>
+			<p>Actores: <span data-bind="text: artistas"/> </p>
+			<p>Director: <span data-bind="text: director"/> </p>
+			<p>Sinopsis:</p> 
+			<p><span data-bind="text:sinopsis"/></p>
 			<a href="trailer.html">
 				<img class="trailer" src="assets/imgs/trailer.png" alt="Trailer">
 			</a>
@@ -59,12 +63,12 @@
 								<tr>
 									<td colspan="3" data-bind="text: nombreComplejo"></td>
 								</tr>
-								<tr data-bind="foreach: { data: horarios, as: 'hora' }">
-									<!--td data-bind="text: $root.showHora(hora), click:$root.compra.bind($data,$index())">    </td-->
-									<td data-bind="text: $root.showHora(hora)">    </td>
+								<tr data-bind="foreach: { data: detailFuncions, as: 'detail' }">
+									<!--td data-bind="text: $root.showHora(hora), click:$root.compra.bind($data,$index())"></td-->
+									<td data-bind="text: $root.showHora(detail.hora),click:$root.compra">    </td>
 								</tr>
 							</table>
-						</td>	
+						</td>
 						<td class="fin">
 							<img src="assets/imgs/boletoicono.png" alt="Comprar">
 						</td>	
