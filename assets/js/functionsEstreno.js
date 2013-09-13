@@ -7,7 +7,7 @@ $(document).ready(function () {
 	var listdetail = new Array();
 
 	//alert("ready detalle =" +localStorage.idPelicula );
-	var surl = "http://172.16.0.76/CinecoWS/rest/pelicula/"+localStorage.idPelicula+"?callback?";
+	var surl = "http://172.16.0.76:8081/CinecoWS/rest/pelicula/"+localStorage.idPelicula+"?callback?";
     $.ajax({
     type: 'GET',
     url: surl,

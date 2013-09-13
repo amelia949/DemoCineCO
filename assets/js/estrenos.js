@@ -15,7 +15,7 @@ $(document).ready(function () {
     }
     
     //var surl = "http://172.16.0.76:8081/cineco/rest/allPeliculas/1?callback?";
-    var surl = "http://172.16.0.76/CinecoWS/rest/allPeliculas/2?callback?";
+    var surl = "http://172.16.0.76:8081/CinecoWS/rest/allPeliculas/2?callback?";
     $.ajax({
     type: 'GET',
     url: surl,
