@@ -10,16 +10,47 @@
 </head>
 <body>
 <script id='code_1'>
-	$(function() {			
-		$("#test4").swipe( { swipeStatus:swipe2, allowPageScroll:"vertical"} );
+$(function() {			
+		$(".test4").swipe( { swipeStatus:swipe2, allowPageScroll:"vertical"} );
 
-		//Swipe handlers.
-		function swipe1(event, direction) {
-			$(this).text( "You have swiped " + direction );
-		}
+		var cant = 0;
+		var total = $(".blankTop").height()+150;
+		var mov = 0;
+		var aux = 0;
 	
 		function swipe2(event, phase, direction, distance) {
-			$(this).text( phase +" you have swiped " + distance + "px in direction:" + direction );
+			if(phase == "start"){
+				aux = 0;
+			}if(phase=="move" && direction=="up"){
+				if( aux < distance && mov <= total){
+					mov += distance;
+					aux = distance;
+				}else if( aux > distance && mov >= 0){
+					mov -= distance;
+					aux = distance;
+				}
+				if(mov >= 0 && mov <= total){
+					cant = total-mov;
+					alpha = cant/total;
+					$(imgNoBlur).css('opacity', alpha);
+				}
+			}
+			if(phase=="move" && direction=="down"){
+				if( aux < distance && mov >= 0){
+				//$(this).text( phase +" you have swiped " + distance + "px in direction:" + direction + " aux: "+aux +" mov: "+mov +" aplha: "+alpha);
+					mov -= distance;
+					aux = distance;
+				}else if( aux > distance && mov <= total){
+					mov += distance;
+					aux = distance;
+				}
+				if(mov >= 0 && mov <= total){
+					cant = total-mov;
+					alpha = cant/total;
+					
+					$(imgNoBlur).css('opacity', alpha);
+				}
+			}
 		}
 	});
 </script>
@@ -28,9 +59,9 @@
 	<div id="header">
 		<img class="regreso" src="assets/imgs/regreso.png" alt="Regresar">
 	</div>
-	<div id="content">
+	<div id="content" class="test4">
 		<div class="blankTop"></div>
-		<!--input type="range" name="points" min="0" max="10" value="10" onchange="updateTextInput(this.value);"-->
+		
 		<div id="detalle">
 			<p data-bind="text: titulo"></p>
 			<p data-bind="text: original()"></p>
@@ -62,7 +93,6 @@
 									<td colspan="3" data-bind="text: nombreComplejo"></td>
 								</tr>
 								<tr data-bind="foreach: { data: detailFuncions, as: 'detail' }">
-									<!--td data-bind="text: $root.showHora(hora), click:$root.compra.bind($data,$index())"></td-->
 									<td data-bind="text: $root.showHora(detail.hora),click:$root.compra">    </td>
 								</tr>
 							</table>

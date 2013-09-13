@@ -4,7 +4,8 @@ function abrir(pagina)
         }  
 
 $(document).ready(function () {
-    $("#listaPelicula").height($(window).height() * .80);
+    $("#contLoading").show();
+    //$("#listaPelicula").height($(window).height() * .80);
     
     // Class to represent a row in the seat reservations grid
     function PeliculaCartel(idPelicula, imagePath,fecha) {
@@ -62,10 +63,10 @@ $(document).ready(function () {
 
     }
     */
-    ko.applyBindings(new CarteleraViewModel());
+    //ko.applyBindings(new CarteleraViewModel());
 
     new DragDivScroll('listaPelicula', "NOHORIZONTAL NOMOUSEWHEEL");
-
+    $("#contLoading").hide();
     $("#footer").click(
           function () {
               $(".menu").show();
@@ -83,5 +84,5 @@ $(document).ready(function () {
 
 $(window).resize(function () {
        
-    $("#listaPelicula").height($(window).height() *.80);
+    //$("#listaPelicula").height($(window).height() *.80);
 });

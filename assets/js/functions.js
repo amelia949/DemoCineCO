@@ -38,6 +38,7 @@ $(document).ready(function () {
 	    	alert("funcionesPelicula");
 	    	funciones = val;
 	    	ko.applyBindings(new AppViewModel());
+	    	$("#contLoading").hide();
 	    },
 	    error: function (xhr, status, error) { alert('Error funcionesPelicula !!' + error+"- " + status); }
 	    });
@@ -118,6 +119,7 @@ $(document).ready(function () {
 			return value.substring(10,16);
 			 window.location = ("compra.html"); 
 		}
+		self.imagePath="assets/imgs/fondo2.png";
 
 		this.compra=function (detalleFuncion) { 
 			localStorage.hora=detalleFuncion.hora;

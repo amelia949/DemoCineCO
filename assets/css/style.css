@@ -39,6 +39,9 @@ body{
 	width:100%;
 	overflow:auto;
 }
+.video{
+	margin-top: 0.5%;
+}
 .blankTop{
 	 display: inline-block; 
 	 margin: 0; 

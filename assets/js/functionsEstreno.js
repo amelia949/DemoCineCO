@@ -16,6 +16,7 @@ $(document).ready(function () {
     success: function (val) {
     	detalle = val;
     	ko.applyBindings(new AppViewModel());
+    	$("#contLoading").hide();
     },
     error: function (xhr, status, error) { alert('Error pelicula !!' + error+"- " + status); }
     });

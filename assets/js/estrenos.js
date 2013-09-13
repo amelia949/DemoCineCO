@@ -62,10 +62,10 @@ $(document).ready(function () {
 
     }
     */
-    ko.applyBindings(new CarteleraViewModel());
+    //ko.applyBindings(new CarteleraViewModel());
 
     new DragDivScroll('listaPelicula', "NOHORIZONTAL NOMOUSEWHEEL");
-
+      $("#contLoading").hide();
     $("#footer").click(
           function () {
               $(".menu").show();
