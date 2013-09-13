@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/functions.js"></script>
+	<script type="text/javascript" src="assets/js/knockout-2.3.0.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
+   
+	
+	<link href="assets/css/main.css" type="text/css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<script id='code_1'>
+	$(function() {			
+		$("#test4").swipe( { swipeStatus:swipe2, allowPageScroll:"vertical"} );
+
+		//Swipe handlers.
+		function swipe1(event, direction) {
+			$(this).text( "You have swiped " + direction );
+		}
+	
+		function swipe2(event, phase, direction, distance) {
+			$(this).text( phase +" you have swiped " + distance + "px in direction:" + direction );
+		}
+	});
+</script>
+	<img id="imgBlur" class="imgA" src="assets/imgs/fondo2_blur.png" alt="some_text">
+	<img id="imgNoBlur" class="imgB" src="assets/imgs/fondo2.png" alt="some_text">
+	<div id="header">
+		<img class="regreso" src="assets/imgs/regreso.png" alt="Regresar">
+	</div>
+	<div id="content">
+		<div class="blankTop"></div>
+		<input type="range" name="points" min="0" max="10" value="10" onchange="updateTextInput(this.value);">
+		<div id="detalle">
+			<p data-bind="text: titulo"></p>
+			<p data-bind="text: original()"></p>
+			<p>G&eacute;nero: <span data-bind="text: genero"/></p>
+			<p>Clasificaci&oacute;n: <span data-bind="text: clasificacion"/></p>
+			<p>Duraci&oacute;n: <span data-bind="text: duracion"/> min</p>
+			<a href="trailer.html">
+				<img class="trailer" src="assets/imgs/trailer.png" alt="Trailer">
+			</a>
+		</div>
+		<ul class="dias "data-bind="foreach: dias">
+			<li data-bind="text: $data, 
+					   css: { selected: $data == $root.chosenFolderId() },
+					   click: $root.goToFolder">
+			</li>
+		</ul>
+		<div id="horarios">
+			<table id="mtable">
+				<!-- Todo: Generate table body -->
+				<tbody data-bind="foreach: { data: complejos, as: 'complejo' }">
+					<tr>
+						<td class="fin">
+							<table>
+								<tr>
+									<td colspan="3" data-bind="text: nombreComplejo"></td>
+								</tr>
+								<tr data-bind="foreach: { data: horarios, as: 'hora' }">
+									<!--td data-bind="text: $root.showHora(hora), click:$root.compra.bind($data,$index())">    </td-->
+									<td data-bind="text: $root.showHora(hora)">    </td>
+								</tr>
+							</table>
+						</td>	
+						<td class="fin">
+							<img src="assets/imgs/boletoicono.png" alt="Comprar">
+						</td>	
+					</tr>
+				</tbody>
+			</table>
+		</div>	
+		<div class="blankBottom"></div>
+	</div>
+	<div id="footer">
+		<img class="redes" src="assets/imgs/face.png" alt="Regresar">
+		<img class="redes" src="assets/imgs/twit.png" alt="Regresar">
+	</div>
+</body>
+</html>

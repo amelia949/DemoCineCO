@@ -1,0 +1,140 @@
+body{
+	font-size:11px;
+}
+.imgA { position:fixed; width: 100%; height:100%; top: 0px; left: 0px; z-index: -2; } 
+.imgB { position:fixed; width: 100%; height:100%; top: 0px; left: 0px; z-index: -1; } 
+#header{
+	position:fixed;
+	background:url(../imgs/header.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	height:10%;
+	width:100%;
+	left:0px;
+	top:0px;
+}
+.regreso{
+	height:80%;
+	top:10%;
+}
+#footer{
+	width:98%;
+	left:1%;
+	right:1%;
+	top:88%;
+	height:10%;
+	position:fixed;
+	background:url(../imgs/footer.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.redes{
+	height:80%;
+	top:10%;
+}
+#content{
+	position:fixed;
+	top:10%;
+	height:78%;
+	width:100%;
+	overflow:auto;
+}
+.blankTop{
+	 display: inline-block; 
+	 margin: 0; 
+	 width:100%;
+	 height:70%;
+}
+.blankBottom{
+	 display: inline-block; 
+	 margin: 0; 
+	 width:100%;
+	 height:10%;
+}
+p{
+  margin: 0;
+  }
+#detalle{
+	left:2%;
+	right:2%;
+	width:96%;
+	margin-top: 0.5%;
+	opacity:0.8;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 1%;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #afaeb4; 
+	color:#fff;
+}
+.trailer{
+	position:relative;
+	right:2%;
+	left:80%;
+	width:18%;
+}
+.row{
+	background:url(../imgs/boletos-box.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.dias{
+	left:2%;
+	right:2%;
+	width:96%;
+	margin-top: 2%;
+	background:url(../imgs/barrahorarios.png);
+	background-repeat:repeat-x;
+	list-style-type:none;
+	padding:0;
+	overflow:hidden;
+}
+li{
+	float:left;
+	color:#fff;
+	height:97px;
+	width:92px;
+	text-align:center;
+}
+li.selected{
+	background:url(../imgs/globohorarios.png);
+	background-repeat:no-repeat;
+}
+#horarios{
+	left:2%;
+	right:2%;
+	width:96%;
+	margin-top: 0.5%;
+	opacity:0.8;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #afaeb4; 
+}
+#mtable{
+	margin: auto;
+	width: 100%%;
+	color: #FFFFFF; 
+	border-collapse:collapse;
+}
+
+#mtable .fin{
+	margin: auto;
+	border-bottom: 1px solid #FFFFFF; 
+	min-height: 50px; 
+}
+
+#mtable>tbody>tr:last-child>td{ border-bottom: none;}
+#mtable>tbody>tr>td:last-child{ 
+	border-bottom: none;
+	width: 10%;
+}
+#mtable a{
+	color: #FFFFFF;
+	margin: 10%;
+	text-decoration: none;
+}

@@ -1,0 +1,76 @@
+body {
+    background-image: url("../image/FondoCartelera.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+   
+    
+}
+#listaPelicula {
+    height: 500px;
+    overflow-y: scroll;
+    
+}
+#header{
+    
+    top: 0;
+    position: static;
+}
+.oculto{
+    display: none;
+}
+ul {
+    list-style-type: none;
+}
+#peliculas {
+    list-style-type:none;
+}
+#peliculas li{
+    display: block;
+}
+
+#footer{
+   
+    display: block;
+    top:0;
+     
+}
+.menu{
+    width: 100%;
+    background-image: url("../image/fondomenu.png");
+    font-family: 'Century Gothic';
+    font-size: larger;
+    font-style: normal;
+    color: #fff;
+}
+
+.general .menu{
+    padding-top: 2%;
+    position: absolute;
+    overflow: hidden;   
+    left: 25%;
+    top:25%;
+}
+.menu div {
+    width: 100%;
+    background-size: cover;
+}
+.menu a {
+    color:  #fff;
+    font-style: normal;
+    text-decoration: none;
+}
+
+
+#MCartelera {
+    background-image: url("../image/cartelera.png");
+}
+#MEstrenos{
+    background-image: url("../image/estrenos.png");
+}
+    
+#MFestivales{
+    background-image: url("../image/festivales.png");
+}
+#MComplejos{
+    background-image: url("../image/complejos.png");
+}

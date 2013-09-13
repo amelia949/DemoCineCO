@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CineCo </title>
+    <script src="assets/js/jquery-1.9.1.min.js"></script>
+    <link rel="stylesheet" href="assets/css/StyleSheet.css"/>
+    <script src="assets/js/knockout-2.3.0.js"></script>
+    <script  src="assets/js/dragdivscroll.js"></script>
+    <script src="assets/js/cartelera.js"></script>
+</head>
+<body align="center">
+    
+    <div class ="general " align="center">
+        <div id="header" align="center">
+            <a href="javascript:DoIt();"><img width=90%  alt="header" src="assets/image/headerCartelera.png"></img></a>
+        </div>  
+        <label id="ejemplo"></label>
+        <div id="listaPelicula" align="center"> 
+            <ul data-bind="foreach: listPeliculas">
+               <li><a href="#" ><img style="width: 50%" data-bind="attr:{src: imagePath},click:$parent.detallePelicula" /></img></a></li>
+            </ul>
+ 
+            </table>
+        </div>
+
+        <div id="footer" >
+            <img alt="footerImg" src="assets/image/flechasCartelera.png">
+        </div>
+
+        <div class="menu" align ="center" hidden >
+            
+           <a href=""> <div id="MEstrenos"> <br><span>Estrenos</span></div></a>
+           <a href=""> <div id="MCartelera"> <br><span>Cartelera</span></div></a>
+            <a href=""><div id="MFestivales"> <br><span>Festivales</span></div></a>
+            <a href=""><div id="MComplejos"> <br><span>Complejos</span></div></a>   
+            <br><br>
+            <img id="ocultaMenu"  width="5%" src="assets/image/flechasmenu.png">
+                    
+        </div>
+
+    </div>
+</body>
+
+</html>
