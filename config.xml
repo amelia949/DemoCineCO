@@ -19,4 +19,12 @@
 
     <preference name="prerendered-icon" value="true" />
 
+    <icon src="assets/iconos/icon-57.png" gap:platform="ios" width="57" height="57" />
+    <icon src="assets/iconos/icon-72.png" gap:platform="ios" width="72" height="72" />
+    <icon src="assets/iconos/icon-114.png" gap:platform="ios" width="114" height="114" />
+
+    <!-- retina iPad support: PhoneGap 2.5.0+ only -->
+    <icon src="assets/iconos/icon-144.png" gap:platform="ios" width="144" height="144" />
+
+
 </widget>
