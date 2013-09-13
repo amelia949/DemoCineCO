@@ -6,7 +6,7 @@ body{
 		    position: fixed;
 		    margin: 0px;
 		    padding: 0px;
-		    top: 30%;
+		    top:200px ;
 		    left: 0px;
 		    list-style: none;
 		    z-index:9999;
@@ -16,7 +16,7 @@ body{
 		}
 		ul#navigation li a {
 	   		 display: block;
-		    margin-left: -85px;
+		    margin-left:  10px;  //-85px;
 		    width: 100px;
 		    height: 70px;
 		    background-repeat:no-repeat;
@@ -25,7 +25,7 @@ body{
 		}		
 		ul#navigation li a {
 		    display: block;
-		    margin-left: -85px;
+		    margin-left: 10px;  //-85px;
 		    width: 100px;
 		    height: 70px;
 		    
@@ -43,7 +43,7 @@ body{
 			position: fixed;
 			
 			padding-left: 10px;
-			margin-top: 3%;
+			margin-top: 38px;
 		}
 
 		

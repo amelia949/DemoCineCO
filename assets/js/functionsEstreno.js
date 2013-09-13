@@ -6,15 +6,14 @@ function updateTextInput(val) {
 $(document).ready(function () {
 	var listdetail = new Array();
 
-	alert("ready detalle =" +localStorage.idPelicula );
-	var surl = "http://192.168.1.72:8081/CinecoWS/rest/pelicula/"+localStorage.idPelicula+"?callback?";
+	//alert("ready detalle =" +localStorage.idPelicula );
+	var surl = "http://172.16.0.76/CinecoWS/rest/pelicula/"+localStorage.idPelicula+"?callback?";
     $.ajax({
     type: 'GET',
     url: surl,
     dataType: "json",
     contentType: "text/plain;charset=UTF-8",
     success: function (val) {
-    	alert("pelicula");
     	detalle = val;
     	ko.applyBindings(new AppViewModel());
     },
@@ -22,7 +21,7 @@ $(document).ready(function () {
     });
     
 	function AppViewModel() {
-		alert("AppViewModel");
+		//alert("AppViewModel");
 		var self = this;
 		
 		self.dias = ['Hoy', 'Jueves 12'];

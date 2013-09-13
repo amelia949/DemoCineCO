@@ -1,3 +1,9 @@
+localStorage.pelicula="";
+localStorage.hora="";
+localStorage.genero="";
+localStorage.clasificacion="";
+localStorage.caracteristicas="";
+
 function updateTextInput(val) {
 	alpha = val/10;
 	$(imgNoBlur).css('opacity', alpha);
@@ -22,7 +28,7 @@ $(document).ready(function () {
     });
 
     function getFunciones(fecha){
-    	var surl = "http://192.168.1.72:8081/CinecoWS/rest/funcionesPelicula/2013-09-10/"+localStorage.idPelicula+"?callback?";
+    	var surl = "http://172.16.0.76:8081/CinecoWS/rest/funcionesPelicula/2013-09-10/"+localStorage.idPelicula+"?callback?";
 	    $.ajax({
 	    type: 'GET',
 	    url: surl,
@@ -73,6 +79,11 @@ $(document).ready(function () {
 		self.original = function() {
 			return self.tituloOriginal + " (" + self.pais + ")";    
 		}
+		localStorage.pelicula=detalle.data.titulo;
+		localStorage.genero=detalle.data.genero;
+		localStorage.clasificacion=detalle.data.clasificacion;
+		localStorage.caracteristicas=detalle.data.caracteristicas;
+
 		
 		var data= funciones.data;
 		var nameComp ="";
@@ -80,13 +91,13 @@ $(document).ready(function () {
     	self.complejos = ko.observableArray([]);
     	listdetail = new Array();
     	for( x=0 ; x<data.length;x++){
-    		//if(antComp != data[x].nombreComplejo){
+    		if(antComp != data[x].nombreComplejo){
     			
-				//if(x!=0  ) {
-				//	self.complejos.push(new Complejo(antComp,listdetail));
-				//}
+				if(x!=0  ) {
+					self.complejos.push(new Complejo(antComp,listdetail));
+				}
 				antComp = data[x].nombreComplejo;
-        	//}
+        	}
         	alert(data[x].nombreComplejo +"-"+data[x].idSala+"-"+ data[x].hora);
         	listdetail[x]= new detailFuncion(data[x].hora,data[x].idSala,data[x].asientos) ;
     	}	
@@ -105,9 +116,12 @@ $(document).ready(function () {
 		*/
 		self.showHora = function(value){
 			return value.substring(10,16);
+			 window.location = ("compra.html"); 
 		}
 
 		this.compra=function (detalleFuncion) { 
+			localStorage.hora=detalleFuncion.hora;
+			localStorage.asientos=detalleFuncion.asientos;
             alert("Mostrar Detalle de " + detalleFuncion.hora+" - "+detalleFuncion.idSala+" - " +detalleFuncion.asientos);
              
          }	
