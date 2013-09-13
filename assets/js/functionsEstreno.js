@@ -17,12 +17,9 @@ $(document).ready(function () {
     	alert("pelicula");
     	detalle = val;
     	ko.applyBindings(new AppViewModel());
-    	
     },
     error: function (xhr, status, error) { alert('Error pelicula !!' + error+"- " + status); }
     });
-
-    
     
 	function AppViewModel() {
 		alert("AppViewModel");
@@ -52,7 +49,6 @@ $(document).ready(function () {
 	// Activates knockout.js
 	//ko.applyBindings(new AppViewModel());
 	$(".regreso").click(function(){
-		alert("regreso");
 		 window.location = ("estrenos.html"); 
 	});
 

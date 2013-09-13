@@ -5,18 +5,10 @@
 	<script type="text/javascript" src="assets/js/functionsEstreno.js"></script>
 	<script type="text/javascript" src="assets/js/knockout-2.3.0.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
-  	<link rel="stylesheet" href="assets/css/menu.css"/>
-    <script src="assets/js/menu.js"></script>	
 	<link href="assets/css/main.css" type="text/css" rel="stylesheet" />
 	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-	<ul id="navigation">
-         <li id="MCartelera"class="cartelera"><a title="Cartelera"><span>Cartelera</span></a></li>
-         <li id="MEstrenos" class="estrenos"><a title="Estrenos"><span>Estrenos</span></a></li>
-         <li id="MComplejos"class="complejos"><a title="Complejos"><span>Complejos</span></a></li>
-         <li id="MFestivales"class="festivales"><a title="Festivales"><span>Festivales</span></a></li>
-    </ul>
 <script id='code_1'>
 	$(function() {			
 		$("#test4").swipe( { swipeStatus:swipe2, allowPageScroll:"vertical"} );
@@ -59,29 +51,6 @@
 					   click: $root.goToFolder">
 			</li>
 		</ul>
-		<div id="horarios">
-			<table id="mtable">
-				<!-- Todo: Generate table body -->
-				<tbody data-bind="foreach: { data: complejos, as: 'complejo' }">
-					<tr>
-						<td class="fin">
-							<table>
-								<tr>
-									<td colspan="3" data-bind="text: nombreComplejo"></td>
-								</tr>
-								<tr data-bind="foreach: { data: detailFuncions, as: 'detail' }">
-									<!--td data-bind="text: $root.showHora(hora), click:$root.compra.bind($data,$index())"></td-->
-									<td data-bind="text: $root.showHora(detail.hora),click:$root.compra">    </td>
-								</tr>
-							</table>
-						</td>
-						<td class="fin">
-							<img src="assets/imgs/boletoicono.png" alt="Comprar">
-						</td>	
-					</tr>
-				</tbody>
-			</table>
-		</div>	
 		<div class="blankBottom"></div>
 	</div>
 	<div id="footer">

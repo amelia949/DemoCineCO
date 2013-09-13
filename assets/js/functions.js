@@ -74,22 +74,22 @@ $(document).ready(function () {
 			return self.tituloOriginal + " (" + self.pais + ")";    
 		}
 		
-		/*var data= funciones.data;
+		var data= funciones.data;
 		var nameComp ="";
 		alert("tam"+data.length);
     	self.complejos = ko.observableArray([]);
     	for( x=0 ; x<data.length;x++){
-    		if(antComp != data[x].nombreComplejo){
+    		/*if(antComp != data[x].nombreComplejo){
     			listdetail = new Array();
 				if(x!=0) {
 					self.complejos.push(new Complejo(antComp,listdetail));
 				}
 				antComp = data[x].nombreComplejo;
-        	}
+        	}*/
         	alert(data[x].nombreComplejo +"-"+data[x].idSala+"-"+ data[x].hora);
         	//listdetail[x]= new detailFuncion(data[x].hora,data[x].idSala,data[x].asientos) ;
     	}	
-    	*/
+    	
 
         self.complejos = ko.observableArray([
          	new Complejo("CINE COLOMBIA PORTAL DEL QUINDÍO.",
@@ -114,7 +114,6 @@ $(document).ready(function () {
 	// Activates knockout.js
 	//ko.applyBindings(new AppViewModel());
 	$(".regreso").click(function(){
-		alert("regreso");
 		 window.location = ("index.html"); 
 	});
 
