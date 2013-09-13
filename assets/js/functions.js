@@ -113,6 +113,10 @@ $(document).ready(function () {
 	}
 	// Activates knockout.js
 	//ko.applyBindings(new AppViewModel());
+	$(".regreso").click(function(){
+		alert("regreso");
+		 window.location = ("index.html"); 
+	});
 
 	
 });																	

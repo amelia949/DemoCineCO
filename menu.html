@@ -4,99 +4,15 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="assets/js/jquery-1.9.1.min.js"></script>
-    <style type="text/css">
-    	body{
-    		color: #fff;
-    		font-family: 'Century Gothic';
-    	}
-    	ul#navigation {
-		    position: fixed;
-		    margin: 0px;
-		    padding: 0px;
-		    top: 20%;
-		    left: 0px;
-		    list-style: none;
-		    z-index:9999;
-		}
-		ul#navigation li {
-		    width: 100px;
-		}
-		ul#navigation li a {
-	   		 display: block;
-		    margin-left: -85px;
-		    width: 100px;
-		    height: 70px;
-		    background-color:#CFCFCF;
-		    background-repeat:no-repeat;
-		    background-position:center center;
-		    border:1px solid #AFAFAF;
-		}		
-		ul#navigation li a {
-		    display: block;
-		    margin-left: -85px;
-		    width: 100px;
-		    height: 70px;
-		    background-color:#CFCFCF;
-		    background-repeat:no-repeat;
-		    background-position:center center;
-		    border:1px solid #AFAFAF;
-		    -moz-border-radius:0px 10px 10px 0px;
-		    -webkit-border-bottom-right-radius: 10px;
-		    -webkit-border-top-right-radius: 10px;
-		    -khtml-border-bottom-right-radius: 10px;
-		    -khtml-border-top-right-radius: 10px;
-		    opacity: 0.6;
-		    filter:progid
-		    :DXImageTransform.Microsoft.Alpha(opacity=60);
-		}
-		ul#navigation li a span{
-			position: fixed;
-			
-			padding-left: 10px;
-			margin-top: 3%;
-		}
-
-		
-
-		ul#navigation .cartelera a{
-		    background-image: url(assets/image/menu/cartelera.png);
-		}
-		ul#navigation .estrenos a      {
-		    background-image: url(assets/image/menu/estrenos.png);
-		}
-		ul#navigation .complejos a      {
-		    background-image: url(assets/image/menu/complejos.png);
-		}
-		ul#navigation .festivales a      {
-		    background-image: url(assets/image/menu/festivales.png);
-		}
-
-    </style>
-
+    <link rel="stylesheet" href="assets/css/menu.css"/>
+    <script src="assets/js/menu.js"></script>
     <script type="text/javascript">
-    	$(function() {
-			 $('#navigation> li').hover(
-			  function () {
-			   $('a',$(this)).stop().animate({'marginLeft':'-2px'},200);
-			  },
-			  function () {
-			   $('a',$(this)).stop().animate({'marginLeft':'-85px'},200);
-			  }
-			 );
-
-			 $('#MCartelera').click(function () {alert("cartelera");});
-			});
-
+    
     </script>
     </head>
 	<body >
 
-		<ul id="navigation">
-			 <li id="MCartelera"class="cartelera"><a title="Cartelera"><span>Cartelera</span></a></li>
-			 <li class="estrenos"><a title="Estrenos"></a></li>
-			 <li class="complejos"><a title="Complejos"></a></li>
-			 <li class="festivales"><a title="Festivales"></a></li>
-		</ul>
+		
 
 
 	</body>

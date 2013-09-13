@@ -15,7 +15,7 @@ $(document).ready(function () {
     }
     
     //var surl = "http://172.16.0.76:8081/cineco/rest/allPeliculas/1?callback?";
-    var surl = "http://192.168.1.72:8081/CinecoWS/rest/allPeliculas/1?callback?";
+    var surl = "http://192.168.1.72:8081/CinecoWS/rest/allPeliculas/2?callback?";
     $.ajax({
     type: 'GET',
     url: surl,
@@ -33,7 +33,7 @@ $(document).ready(function () {
     self.detallePelicula = function (seat) { 
         alert("Mostrar Detalle de " + seat.idPelicula); 
             localStorage.idPelicula =  seat.idPelicula;
-            abrir("detalle.html");}
+            abrir("detalleEstreno.html");}
     var data= valJson.data;
     self.listPeliculas = ko.observableArray([]);
     for( x=0 ; x<data.length;x++){

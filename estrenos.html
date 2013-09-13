@@ -10,7 +10,7 @@
     <script src="assets/js/menu.js"></script>
     <script src="assets/js/knockout-2.3.0.js"></script>
     <script src="assets/js/dragdivscroll.js"></script>
-    <script src="assets/js/cartelera.js"></script>
+    <script src="assets/js/estrenos.js"></script>
     
 </head>
 <body >
@@ -27,7 +27,7 @@
         <label id="ejemplo"></label>
         <div id="listaPelicula" align="center"> 
             <ul data-bind="foreach: listPeliculas">
-               <li><img style="width:116px;height:174px;" data-bind="attr:{src: imagePath},click:$parent.detallePelicula" /></img></li>
+               <li><img style="width:116px;height:174px;" data-bind="attr:{src: imagePath},click:$parent.detallePelicula" /></img><br><u><strong><span data-bind="text: fecha"/></strong></u></li>
             </ul>
         </div>
     </div>

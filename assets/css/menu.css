@@ -1,0 +1,62 @@
+body{
+    		color: #fff;
+    		font-family: 'Century Gothic';
+    	}
+    	ul#navigation {
+		    position: fixed;
+		    margin: 0px;
+		    padding: 0px;
+		    top: 30%;
+		    left: 0px;
+		    list-style: none;
+		    z-index:9999;
+		}
+		ul#navigation li {
+		    width: 100px;
+		}
+		ul#navigation li a {
+	   		 display: block;
+		    margin-left: -85px;
+		    width: 100px;
+		    height: 70px;
+		    background-repeat:no-repeat;
+		    background-position:center center;
+		    
+		}		
+		ul#navigation li a {
+		    display: block;
+		    margin-left: -85px;
+		    width: 100px;
+		    height: 70px;
+		    
+		    background-repeat:no-repeat;
+		    background-position:center center;
+		    
+		    -moz-border-radius:0px 10px 10px 0px;
+		    -webkit-border-bottom-right-radius: 10px;
+		    -webkit-border-top-right-radius: 10px;
+		    -khtml-border-bottom-right-radius: 10px;
+		    -khtml-border-top-right-radius: 10px;
+		    
+		}
+		ul#navigation li a span{
+			position: fixed;
+			
+			padding-left: 10px;
+			margin-top: 3%;
+		}
+
+		
+
+		ul#navigation .cartelera a{
+		    background-image: url(../image/menu/cartelera.png);
+		}
+		ul#navigation .estrenos a      {
+		    background-image: url(../image/menu/estrenos.png);
+		}
+		ul#navigation .complejos a      {
+		    background-image: url(../image/menu/complejos.png);
+		}
+		ul#navigation .festivales a      {
+		    background-image: url(../image/menu/festivales.png);
+		}
