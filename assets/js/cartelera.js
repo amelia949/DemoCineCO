@@ -31,6 +31,7 @@ $(document).ready(function () {
     self.detallePelicula = function (seat) { 
         alert("Mostrar Detalle de " + seat.idPelicula); 
             localStorage.idPelicula =  seat.idPelicula;
+            $("#contLoading").show();
             abrir("detalle.html");}
     var data= valJson.data;
     self.listPeliculas = ko.observableArray([]);

@@ -31,5 +31,19 @@
     <icon src="assets/iconos/icon-72.png" gap:platform="android" gap:density="hdpi" />
     <icon src="assets/iconos/icon-96.png" gap:platform="android" gap:density="xhdpi" />
 
+    <gap:splash src="assets/splash/320-x-480.png" gap:platform="ios" width="320" height="480" />
 
+    <gap:splash src="assets/splash/640-x-1136.png" gap:platform="ios" width="640" height="960" />
+    <gap:splash src="assets/splash/640-x-1136.png" gap:platform="ios" width="640" height="1136" />
+    <gap:splash src="assets/splash/1024-x-748.png" gap:platform="ios" width="1024" height="748" />
+    <gap:splash src="assets/splash/768-x-1004.png" gap:platform="ios" width="768" height="1004" />
+
+    <!-- retina iPad support: PhoneGap 2.5.0+ only -->
+    <gap:splash src="assets/splash/1536x2008px.png" gap:platform="ios" width="2048" height="1496" />
+    <gap:splash src="assets/splash/1536x2008px.png" gap:platform="ios" width="1536" height="2008" />
+
+    <gap:splash src="assets/splash/200-x-320.png" gap:platform="android" gap:density="ldpi" />
+<gap:splash src="assets/splash/320-x-480.png" gap:platform="android" gap:density="mdpi" />
+<gap:splash src="assets/splash/480-x-800.png" gap:platform="android" gap:density="hdpi" />
+<gap:splash src="assets/splash/720-x-1280.png" gap:platform="android" gap:density="xhdpi" />
 </widget>
