@@ -16,8 +16,8 @@ body{
 		}
 		ul#navigation li a {
 	   		 display: block;
-		    margin-left:  10px;  //-85px;
-		    width: 100px;
+		    margin-left:  10px;  
+		    width: 130px;
 		    height: 70px;
 		    background-repeat:no-repeat;
 		    background-position:center center;
@@ -26,7 +26,7 @@ body{
 		ul#navigation li a {
 		    display: block;
 		    margin-left: 10px;  //-85px;
-		    width: 100px;
+		    width: 130px;
 		    height: 70px;
 		    
 		    background-repeat:no-repeat;
@@ -41,7 +41,7 @@ body{
 		}
 		ul#navigation li a span{
 			position: fixed;
-			
+			margin-left: 15px;
 			padding-left: 10px;
 			margin-top: 38px;
 		}

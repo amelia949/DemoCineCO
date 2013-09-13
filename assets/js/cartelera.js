@@ -3,10 +3,7 @@ function abrir(pagina)
             window.location = (pagina); 
         }  
 
-$(document).ready(function () {
-    $("#contLoading").show();
-    //$("#listaPelicula").height($(window).height() * .80);
-    
+$(document).ready(function () {    
     // Class to represent a row in the seat reservations grid
     function PeliculaCartel(idPelicula, imagePath,fecha) {
         var self = this;
@@ -15,7 +12,6 @@ $(document).ready(function () {
         self.fecha=fecha;
     }
     
-    //var surl = "http://172.16.0.76:8081/cineco/rest/allPeliculas/1?callback?";
     var surl = "http://172.16.0.76:8081/CinecoWS/rest/allPeliculas/1?callback?";
     $.ajax({
     type: 'GET',
@@ -24,6 +20,7 @@ $(document).ready(function () {
     contentType: "text/plain;charset=UTF-8",
     success: function (val) {
     ko.applyBindings(new CarteleraViewModel(val));
+    $("#contLoading").hide();
     },
     error: function (xhr, status, error) { alert('Error text !!' + error+"- " + status); }
     });
@@ -32,7 +29,7 @@ $(document).ready(function () {
     function CarteleraViewModel(valJson) {
     var self = this;
     self.detallePelicula = function (seat) { 
-        //alert("Mostrar Detalle de " + seat.idPelicula); 
+        alert("Mostrar Detalle de " + seat.idPelicula); 
             localStorage.idPelicula =  seat.idPelicula;
             abrir("detalle.html");}
     var data= valJson.data;
@@ -66,7 +63,7 @@ $(document).ready(function () {
     //ko.applyBindings(new CarteleraViewModel());
 
     new DragDivScroll('listaPelicula', "NOHORIZONTAL NOMOUSEWHEEL");
-    $("#contLoading").hide();
+    //
     $("#footer").click(
           function () {
               $(".menu").show();
@@ -78,7 +75,7 @@ $(document).ready(function () {
     });
 
     $("#ocultaMenu").click(function (){$(".menu").hide();});
-
+   
 
 });
 
