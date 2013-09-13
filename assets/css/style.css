@@ -68,6 +68,10 @@ p{
 	border-radius: 20px;
 	background-color: #afaeb4; 
 	color:#fff;
+	font-family: 'Century Gothic';
+    font-size: medium;
+    font-style: normal;
+    
 }
 .trailer{
 	position:relative;
