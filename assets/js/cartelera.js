@@ -31,13 +31,13 @@ $(document).ready(function () {
     function CarteleraViewModel(valJson) {
     var self = this;
     self.detallePelicula = function (seat) { 
-        alert("Mostrar Detalle de " + seat.idPelicula); 
+        //alert("Mostrar Detalle de " + seat.idPelicula); 
             localStorage.idPelicula =  seat.idPelicula;
             abrir("detalle.html");}
     var data= valJson.data;
     self.listPeliculas = ko.observableArray([]);
     for( x=0 ; x<data.length;x++){
-        alert(valJson.data[x].idPelicula +"-"+valJson.data[x].imgCartelera+"-"+valJson.data[x].fechaEstreno);
+        //alert(valJson.data[x].idPelicula +"-"+valJson.data[x].imgCartelera+"-"+valJson.data[x].fechaEstreno);
         self.listPeliculas.push(new PeliculaCartel(valJson.data[x].idPelicula, valJson.data[x].imgCartelera, valJson.data[x].fechaEstreno));
     }
 

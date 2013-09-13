@@ -78,20 +78,21 @@ $(document).ready(function () {
 		var nameComp ="";
 		alert("tam"+data.length);
     	self.complejos = ko.observableArray([]);
+    	listdetail = new Array();
     	for( x=0 ; x<data.length;x++){
-    		/*if(antComp != data[x].nombreComplejo){
-    			listdetail = new Array();
-				if(x!=0) {
-					self.complejos.push(new Complejo(antComp,listdetail));
-				}
+    		//if(antComp != data[x].nombreComplejo){
+    			
+				//if(x!=0  ) {
+				//	self.complejos.push(new Complejo(antComp,listdetail));
+				//}
 				antComp = data[x].nombreComplejo;
-        	}*/
+        	//}
         	alert(data[x].nombreComplejo +"-"+data[x].idSala+"-"+ data[x].hora);
-        	//listdetail[x]= new detailFuncion(data[x].hora,data[x].idSala,data[x].asientos) ;
+        	listdetail[x]= new detailFuncion(data[x].hora,data[x].idSala,data[x].asientos) ;
     	}	
-    	
+    	self.complejos.push(new Complejo(antComp,listdetail));
 
-        self.complejos = ko.observableArray([
+        /*self.complejos = ko.observableArray([
          	new Complejo("CINE COLOMBIA PORTAL DEL QUINDÍO.",
          				[new detailFuncion("2013-09-10 13:10:00.0","3","f2,g3,g6,y6"),
          				new detailFuncion("2013-09-10 15:10:00.0","4","g6,h8,n9,v0,d4,c9"),
@@ -101,7 +102,7 @@ $(document).ready(function () {
          				new detailFuncion("2013-09-10 15:10:00.0","9","v5,x7,f8,f5"),
          				new detailFuncion("2013-09-10 17:10:00.0","11","g9,v9,c3,v5")])
          	]);
-			
+		*/
 		self.showHora = function(value){
 			return value.substring(10,16);
 		}
