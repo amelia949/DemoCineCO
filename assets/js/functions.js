@@ -7,7 +7,7 @@ $(document).ready(function () {
 	var listdetail = new Array();
 
 	alert("ready detalle =" +localStorage.idPelicula );
-	var surl = "http://172.16.0.76:8081/CinecoWS/rest/pelicula/"+localStorage.idPelicula+"?callback?";
+	var surl = "http://192.168.1.72:8081/CinecoWS/rest/pelicula/"+localStorage.idPelicula+"?callback?";
     $.ajax({
     type: 'GET',
     url: surl,
@@ -22,7 +22,7 @@ $(document).ready(function () {
     });
 
     function getFunciones(fecha){
-    	var surl = "http://172.16.0.76:8081/CinecoWS/rest/funcionesPelicula/2013-09-10/"+localStorage.idPelicula+"?callback?";
+    	var surl = "http://192.168.1.72:8081/CinecoWS/rest/funcionesPelicula/2013-09-10/"+localStorage.idPelicula+"?callback?";
 	    $.ajax({
 	    type: 'GET',
 	    url: surl,
