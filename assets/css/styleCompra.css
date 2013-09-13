@@ -1,0 +1,168 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	font: sans-serif;
+}
+
+body{	
+	font-family: "Century Gothic";
+}
+#fondo{	
+	margin: auto;	
+	max-width: 640px;
+	max-height: 960px;		
+}
+
+#poster{
+	z-index: -1;
+	position: fixed;
+	max-width: 100%;
+	min-height: 100%;
+}
+
+#detalle{
+	background-color: #FFFFFF;
+	width: 80%;
+	height: 90%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#asientosSala{
+	border-collapse:collapse;
+	font-size: 0.5em;	
+	width: 80%;
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
+
+#mas{
+	background: url('../../assets/images/mas.png');
+	height: 20px;
+	width: 20px;
+	border: none;
+}
+
+#menos{
+	background: url('../../assets/images/menos.png');
+	height: 20px;
+	width: 20px;
+	border: none;
+}
+
+#btnPagoCineco{
+	background: url('../../assets/images/cinecopago.png');
+	height: 30px;
+	width: 30px;
+	border: none;
+}
+
+#btnPagoCredito{
+	background: url('../../assets/images/tdec.png');
+	height: 30px;
+	width: 30px;
+	border: none;
+}
+
+#modificar{
+	background: url('../../assets/images/modificar.png');
+	height: 30px;
+	width: 30px;
+	border: none;
+}
+
+#pagar{
+	background: url('../../assets/images/pagar.png');
+	height: 30px;
+	width: 30px;
+	border: none;
+}
+
+input[type='checkbox']{
+	opacity: 0;	
+	width: 18px;	
+}
+
+input[type='checkbox'] + label{
+	margin: 0;
+	clear: none;
+	padding: 20px 0 0px 25px;
+	cursor: pointer;
+	background: url('../../assets/images/disponible.png') left center no-repeat;
+}
+
+input[type='checkbox']:checked + label{
+	background-image: url('../../assets/images/seleccionada.png');	
+}
+
+#asientosSala td{	
+	max-width: 20px;
+	min-width: 10px;
+}
+
+#mtable{
+	margin: auto;
+	width: 95%;
+	color: #FFFFFF;	
+	border-collapse:collapse;
+}
+
+#mtable td{
+	border-bottom: 1px solid #FFFFFF;	
+	min-height: 50px;	
+}
+
+#mtable>tbody>tr:last-child>td{ border-bottom: none;}
+#mtable>tbody>tr>td:last-child{
+}
+
+#mtable a{
+	color: #FFFFFF;
+	margin: 10%;
+	text-decoration: none;
+}
+
+.derecha{
+	text-align: right;
+}
+
+#elegirHorario{
+	background-image: url('../../assets/images/barrahorarios.png');
+	max-width: 607px;
+		
+	margin: auto;	
+	color: #FFFFFF;		
+}
+
+.enfasis{
+	font-size: 2em;
+}
+
+.datosPago{
+	width: 90%;
+	margin-left: 5%;	
+	margin-right: 5%;
+	color: #FFFFFF;
+	text-align: left;
+}
+
+
+#elegirFuncion{
+	padding-top: 30%;
+}
+
+#horarios{
+	color: #FFFFFF;
+	max-width: 607px;
+	margin: auto;
+	margin-top: 50px;
+	opacity:0.8;
+	padding-top: 20px;
+	padding-bottom: 20px;
+
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #afaeb4;	
+}

@@ -3,6 +3,7 @@ localStorage.hora="";
 localStorage.genero="";
 localStorage.clasificacion="";
 localStorage.caracteristicas="";
+localStorage.fondoImg= "";
 
 function updateTextInput(val) {
 	alpha = val/10;
@@ -11,7 +12,6 @@ function updateTextInput(val) {
 	var detalle ="";
 $(document).ready(function () {
 	var listdetail = new Array();
-
 	alert("ready detalle =" +localStorage.idPelicula );
 	var surl = "http://172.16.0.76:8081/CinecoWS/rest/pelicula/"+localStorage.idPelicula+"?callback?";
     $.ajax({
@@ -103,28 +103,21 @@ $(document).ready(function () {
         	listdetail[x]= new detailFuncion(data[x].hora,data[x].idSala,data[x].asientos) ;
     	}	
     	self.complejos.push(new Complejo(antComp,listdetail));
-
-        /*self.complejos = ko.observableArray([
-         	new Complejo("CINE COLOMBIA PORTAL DEL QUINDÍO.",
-         				[new detailFuncion("2013-09-10 13:10:00.0","3","f2,g3,g6,y6"),
-         				new detailFuncion("2013-09-10 15:10:00.0","4","g6,h8,n9,v0,d4,c9"),
-         				new detailFuncion("2013-09-10 17:10:00.0","6","g7,j7,j8,b9")]),
-         	new Complejo("Cine Mil de Colombia.",
-         				[new detailFuncion("2013-09-10 13:10:00.0","8","h7,b7,b8"),
-         				new detailFuncion("2013-09-10 15:10:00.0","9","v5,x7,f8,f5"),
-         				new detailFuncion("2013-09-10 17:10:00.0","11","g9,v9,c3,v5")])
-         	]);
-		*/
 		self.showHora = function(value){
 			return value.substring(10,16);
-			 window.location = ("compra.html"); 
+			 
 		}
-		self.imagePath="assets/imgs/fondo2.png";
+		var url = "assets/imgs/fondo1.png";
+		self.imagePath=url;
+		self.imagePathBlur=url.substr(0,url.length-4)+"_blur.png";
+		localStorage.fondoImg= url;
 
 		this.compra=function (detalleFuncion) { 
 			localStorage.hora=detalleFuncion.hora;
 			localStorage.asientos=detalleFuncion.asientos;
+			  
             alert("Mostrar Detalle de " + detalleFuncion.hora+" - "+detalleFuncion.idSala+" - " +detalleFuncion.asientos);
+            window.location = ("compra.html");
              
          }	
 	}

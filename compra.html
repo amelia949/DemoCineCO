@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=2"/>
+	<meta charset="utf-8" />
+	<title>Cine Colombia S.A.</title>
+	
+	<script src="assets/js/jquery-1.10.2.min.js"></script>
+	<script type='text/javascript' src='assets/js/knockout-2.3.0.js'></script>
+	<script type='text/javascript' src='assets/js/funciones.js'></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/styleCompra.css">	
+
+	<script type="text/javascript">
+		function boletos(valor){
+			var num = document.getElementById("nBoletos");			
+			if(valor=="mas"){
+				num.value = parseInt(num.value)+1;
+			}else if(num.value>1){
+				num.value = num.value-1;
+			}
+
+		}
+	</script>
+
+</head>
+<body>
+	<div id="fondo">
+		<img id="poster" data-bind="attr:{src: imagePath}"/>	
+		<form>	
+			<div id="elegirFuncion">
+				<div id="elegirHorario">
+					<table class="datosPago">
+						<tr>
+							<th colspan="2">Localidad</th>
+							<th>Servicio por boleta</th>
+							<th>Numero de boletas</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td><input type="radio" name="localidad" value="general"></td>
+								<td>Compra general</td>
+								<td>$ 2.200</td>
+								<td>
+									<button id="mas" onclick="boletos('mas')" type="button"></button>
+									<input id="nBoletos" type="text" style="width:20px" value='1'>
+									<button id="menos" onclick="boletos('menos')" type="button"></button>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="radio" name="localidad" value="female"></td>
+								<td>Compra preferencial</td>
+								<td>$ 2.200</td>
+								<td><b>Total:</b> <span id="total">$ 14.400</span></td>
+							</tr>
+						</tbody>
+					</table>												
+				</div>
+				<div id="horarios" style="text-align:center">
+					<span>Medios de pago</span>	
+					<button type="button" id="btnPagoCredito"></button>
+					<button type="button" id="btnPagoCineco"></button>
+					<table id="asientosSala">
+					</table>							
+					<span>Pantalla</span>							
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

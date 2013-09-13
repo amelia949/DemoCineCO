@@ -44,6 +44,9 @@ $(document).ready(function () {
 		self.original = function() {
 			return self.tituloOriginal + " (" + self.pais + ")";    
 		}
+		var url = "assets/imgs/fondo1.png";
+		self.imagePath=url;
+		self.imagePathBlur=url.substr(0,url.length-4)+"_blur.png";
 		
 	}
 	// Activates knockout.js
