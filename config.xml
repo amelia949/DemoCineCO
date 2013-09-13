@@ -26,5 +26,10 @@
     <!-- retina iPad support: PhoneGap 2.5.0+ only -->
     <icon src="assets/iconos/icon-144.png" gap:platform="ios" width="144" height="144" />
 
+    <icon src="assets/iconos/icon-36.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="assets/iconos/icon-48.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="assets/iconos/icon-72.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="assets/iconos/icon-96.png" gap:platform="android" gap:density="xhdpi" />
+
 
 </widget>
