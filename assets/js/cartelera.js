@@ -2,10 +2,6 @@ $(document).ready(function () {
     $("#listaPelicula").height($(window).height() * .72);
     $(".menu").height($(window).height() * .65);
     $(".menu").hide();
-<<<<<<< HEAD
-=======
-    localStorage.idPelicula="";
->>>>>>> integracion
     // Class to represent a row in the seat reservations grid
     function PeliculaCartel(idPelicula, imagePath) {
         var self = this;
@@ -52,21 +48,12 @@ $(document).ready(function () {
         self.listPeliculas = ko.observableArray([
         new PeliculaCartel("1", "assets/image/Cartelera1.png"),
         new PeliculaCartel("2", "assets/image/Cartelera2.png"),
-<<<<<<< HEAD
         new PeliculaCartel("3", "assets/image/Cartelera3.png"),
         new PeliculaCartel("4", "http://www.cinepolis.com.mx/Imagenes/Peliculas/chicas-armadas-y-peligrosas-cartel.jpg")
     ]);
 
     }
     */
-=======
-        new PeliculaCartel("3", "assets/image/Cartelera3.png")
-    ]);
-
-    }
-    
->>>>>>> integracion
-
     ko.applyBindings(new CarteleraViewModel());
 
     new DragDivScroll('listaPelicula', "NOHORIZONTAL NOMOUSEWHEEL");
