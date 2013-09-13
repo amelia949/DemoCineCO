@@ -1,3 +1,8 @@
+function abrir(pagina) 
+        {
+            window.location = (pagina); 
+        }  
+
 $(document).ready(function () {
     $("#listaPelicula").height($(window).height() * .72);
     $(".menu").height($(window).height() * .65);
@@ -25,7 +30,10 @@ $(document).ready(function () {
     // Overall viewmodel for this screen, along with initial state
     function CarteleraViewModel(valJson) {
     var self = this;
-    self.detallePelicula = function (seat) { alert("Mostrar Detalle de " + seat.idPelicula); }
+    self.detallePelicula = function (seat) { 
+        alert("Mostrar Detalle de " + seat.idPelicula); 
+            localStorage.idPelicula =  seat.idPelicula;
+            abrir("detalle.html");}
     var data= valJson.data;
     self.listPeliculas = ko.observableArray([]);
     for( x=0 ; x<data.length;x++){
