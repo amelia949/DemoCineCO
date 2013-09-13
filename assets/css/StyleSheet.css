@@ -1,9 +1,7 @@
 body {
-    background-image: url("../image/FondoCartelera.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-   
-    
+    background-image: url("../image/FondoCartelera1.png");
+    background-repeat:repeat-y;
+    background-size: 100%;
 }
 #listaPelicula {
     height: 500px;
