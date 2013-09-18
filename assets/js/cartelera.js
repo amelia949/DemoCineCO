@@ -13,7 +13,7 @@ $(document).ready(function () {
         self.fecha=fecha;
     }
     
-    var surl = "http://172.16.0.76:8081/CinecoWS/rest/allPeliculas/1?callback?";
+  /*  var surl = "http://172.16.0.76:8081/CinecoWS/rest/allPeliculas/1?callback?";
     $.ajax({
         type: 'GET',
         url: surl,
@@ -40,7 +40,26 @@ $(document).ready(function () {
             alert(valJson.data[x].idPelicula +"-"+valJson.data[x].imgCartelera+"-"+valJson.data[x].fechaEstreno);
             self.listPeliculas.push(new PeliculaCartel(valJson.data[x].idPelicula, valJson.data[x].imgCartelera, valJson.data[x].fechaEstreno));
         }
-    }
+    }*/
+  function CarteleraViewModel() {
+        var self = this;
+        self.detallePelicula = function (seat) { 
+            alert("Mostrar Detalle de " + seat.idPelicula);
+            localStorage.idPelicula =  seat.idPelicula;
+            window.location = ("detalle.html"); 
+             
+         }
+        // Editable data
+        self.listPeliculas = ko.observableArray([
+        new PeliculaCartel("1", "assets/image/Cartelera1.png"),
+        new PeliculaCartel("2", "assets/image/Cartelera2.png"),
+
+        new PeliculaCartel("3", "assets/image/Cartelera3.png"),
+        new PeliculaCartel("4", "http://www.cinepolis.com.mx/Imagenes/Peliculas/chicas-armadas-y-peligrosas-cartel.jpg")
+    ]);
+}
+ko.applyBindings(new CarteleraViewModel());
+
     new DragDivScroll('listaPelicula', "NOHORIZONTAL NOMOUSEWHEEL");
 
     

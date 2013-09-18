@@ -23,7 +23,7 @@ $(document).ready(function () {
         self.idComplejo = idComplejo;
     }
 
-    var surl = "http://172.16.0.76:8081/CinecoWS/rest/allComplejos/2?callback?";
+    var surl = "http://172.16.0.76:8081/CinecoWS/rest/allComplejos/?callback?";
     $.ajax({
     type: 'GET',
     url: surl,
