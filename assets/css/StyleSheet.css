@@ -1,15 +1,21 @@
-body {
+body{
+    margin:0px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+.general {
+    position: fixed;
+    margin: 0px;
+    padding:0px;
     background-image: url("../image/FondoCartelera1.png");
     background-repeat:repeat-y;
-    background-size: cover;
+    background-size: cover;    
+    height:100%;
+    width:100%;  
 }
 #listaPelicula {
-    height: 500px;
-    overflow-y: scroll;
-    
+    overflow-y: scroll;  
 }
 #header{
-    
     top: 0;
     position: static;
 }
@@ -28,6 +34,11 @@ body {
 #listaPelicula ul li   {
     color: #0101DF;
 }
-#contLoading{
-    
+#footer{
+    width:98%;
+    left:1%;
+    right:1%;
+    top:95%;
+    height:10%;
+    position:fixed;
 }

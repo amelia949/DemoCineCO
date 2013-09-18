@@ -4,8 +4,6 @@ function abrir(pagina)
         }  
 
 $(document).ready(function () {
-    $("#listaPelicula").height($(window).height() * .80);
-    
     // Class to represent a row in the seat reservations grid
     function PeliculaCartel(idPelicula, imagePath,fecha) {
         var self = this;
@@ -23,8 +21,9 @@ $(document).ready(function () {
     contentType: "text/plain;charset=UTF-8",
     success: function (val) {
     ko.applyBindings(new CarteleraViewModel(val));
+    $("#contLoading").hide();
     },
-    error: function (xhr, status, error) { alert('Error text !!' + error+"- " + status); }
+    error: function (xhr, status, error) { alert('Error text !!' + error+"- " + status);$("#contLoading").hide(); }
     });
 
     // Overall viewmodel for this screen, along with initial state
@@ -65,7 +64,7 @@ $(document).ready(function () {
     //ko.applyBindings(new CarteleraViewModel());
 
     new DragDivScroll('listaPelicula', "NOHORIZONTAL NOMOUSEWHEEL");
-      $("#contLoading").hide();
+      
     $("#footer").click(
           function () {
               $(".menu").show();

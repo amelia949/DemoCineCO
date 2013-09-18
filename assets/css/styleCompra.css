@@ -1,11 +1,11 @@
 *{
 	margin: 0px;
 	padding: 0px;
-	font: sans-serif;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 
 body{	
-	font-family: "Century Gothic";
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 }
 #fondo{	
 	margin: auto;	

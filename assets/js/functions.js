@@ -24,7 +24,7 @@ $(document).ready(function () {
     	detalle = val;
     	getFunciones();
     },
-    error: function (xhr, status, error) { alert('Error pelicula !!' + error+"- " + status); }
+    error: function (xhr, status, error) { alert('Error pelicula !!' + error+"- " + status); $("#contLoading").hide();}
     });
 
     function getFunciones(fecha){
@@ -38,9 +38,10 @@ $(document).ready(function () {
 	    	alert("funcionesPelicula");
 	    	funciones = val;
 	    	ko.applyBindings(new AppViewModel());
+	    	alert("ocultar loading");
 	    	$("#contLoading").hide();
 	    },
-	    error: function (xhr, status, error) { alert('Error funcionesPelicula !!' + error+"- " + status); }
+	    error: function (xhr, status, error) { alert('Error funcionesPelicula !!' + error+"- " + status); $("#contLoading").hide(); }
 	    });
     }
 

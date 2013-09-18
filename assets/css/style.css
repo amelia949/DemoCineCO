@@ -1,6 +1,11 @@
 body{
 	font-size:11px;
 }
+#bodyUbicacion{
+    background-image: url("../image/FondoCartelera1.png");
+    background-repeat:repeat-y;
+    background-size: cover;
+}
 .imgA { position:fixed; width: 100%; height:100%; top: 0px; left: 0px; z-index: -2; } 
 .imgB { position:fixed; width: 100%; height:100%; top: 0px; left: 0px; z-index: -1; } 
 #header{
@@ -34,7 +39,7 @@ body{
 }
 #content{
 	position:fixed;
-	top:10%;
+	top:20%;
 	height:78%;
 	width:100%;
 	overflow:auto;
@@ -71,7 +76,7 @@ p{
 	border-radius: 20px;
 	background-color: #afaeb4; 
 	color:#fff;
-	font-family: 'Century Gothic';
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
     font-style: normal;
     
 }
@@ -144,3 +149,31 @@ p{
 	margin: 10%;
 	text-decoration: none;
 }
+#mapa{
+	float:left;
+	height:100%;
+	width:75%;
+}
+#lista{
+	background:url(../imgs/localizadorbox.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	float:left;
+	height:100%;
+	width:25%;
+	overflow-y:scroll;
+}
+#tablaComplejos{
+	font-size: medium;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	color:#fff;
+	width:100%;
+}
+#tablaComplejos .comp{
+	text-align:center;
+	height:50px;
+	border-bottom: 1px solid #FFFFFF; 
+	min-height: 50px; 
+}
+
+#mtable>tbody>tr:last-child>td{ border-bottom: none;}
