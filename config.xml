@@ -18,6 +18,7 @@
     </author>
 
     <preference name="prerendered-icon" value="true" />
+    <preference name="orientation" value="landscape" />
 
     <icon src="assets/iconos/icono.png" />
 

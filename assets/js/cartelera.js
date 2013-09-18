@@ -30,9 +30,9 @@ $(document).ready(function () {
         alert("CarteleraViewModel(valJson) ");
         var self = this;
         self.detallePelicula = function (seat) { 
-            alert("Mostrar Detalle de " + seat.idPelicula); 
-                localStorage.idPelicula =  seat.idPelicula;
-                window.location = ("detalle.html");
+            alert("Mostrar Detalle de " + seat.idPelicula);
+            localStorage.idPelicula =  seat.idPelicula; 
+             window.location = ("detalle.html"); 
             }
         var data= valJson.data;
         self.listPeliculas = ko.observableArray([]);
