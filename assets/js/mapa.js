@@ -41,7 +41,7 @@ $(document).ready(function () {
 		var data= valJson.data;
         self.complejos = ko.observableArray([]);
         for( x=0 ; x<data.length;x++){
-            alert(valJson.data[x].idPelicula +"-"+valJson.data[x].imgCartelera+"-"+valJson.data[x].fechaEstreno);
+            //alert(valJson.data[x].idPelicula +"-"+valJson.data[x].imgCartelera+"-"+valJson.data[x].fechaEstreno);
             self.complejos.push(new Complejo(valJson.data[x].telefono, valJson.data[x].latitud, valJson.data[x].longitud,
             	valJson.data[x].direccion,valJson.data[x].ciudad,valJson.data[x].nombre,valJson.data[x].idComplejo));
         }
