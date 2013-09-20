@@ -1,0 +1,160 @@
+body{
+    margin:0px;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+}
+@media only screen and (max-width: 768px){
+    .general{
+        background-image: url("../image/FondoCartelera1.png");
+    } 
+    #lista{
+            margin-top: 10%;
+            background:url("../imgs/localizadorbox.png");
+            background-repeat:no-repeat;
+            background-size: cover;
+            background-position:center;
+            float:left;
+            height:75%;
+            width:30%;
+            overflow-y:scroll;
+            border-radius:20px;
+            margin-left: 2%;
+            color:#fff;
+        }
+
+        #mapa{
+            margin-top: 10%;
+            float:left;
+            height:75%;
+            width:65%;
+            border-radius:20px;
+        }
+        #tablaComplejos{
+            font-size: 12px;
+        }
+        #flechamenu{
+              width:100%;
+            right:2%;
+            bottom: 1%;
+            top:90%;
+            position:fixed;
+        }
+}
+@media only screen and (min-width: 768px){
+    .general{
+    background-image: url("../image/FondoCartelera.png");
+    }       
+
+     #mapa{
+            float:left;
+            height:75%;
+            width:63%;
+        }
+        #flechamenu{
+            display: none;
+        }
+        #lista{
+            background:url("../imgs/localizadorbox.png");
+            background-repeat:no-repeat;
+            background-size: cover;
+            float:left;
+            height:75%;
+            width:25%;
+            overflow-y:scroll;
+            margin-left: 10%;
+            color:#fff
+        }
+        #tablaComplejos{
+            font-size: medium;
+        }
+}
+
+@media only screen and (max-width: 768px){
+    .imgCartel{
+   		width:80%;
+    }  
+     .imagenCartel{
+   		width:100%;
+    }        
+}
+
+.general {
+    position: fixed;
+    margin: 0px;
+    padding:0px;
+    background-repeat:repeat-y;
+    background-size: cover;    
+    height:100%;
+    width:100%;  
+    z-index:1;
+}
+#listaPelicula {
+    overflow-y: scroll;  
+    height:80%;
+}
+#header{
+    top: 0;
+    position: static;
+}
+.oculto{
+    display: none;
+}
+ #listaPelicula ul {
+    list-style-type: none;
+}
+#peliculas {
+    list-style-type:none;
+}
+#peliculas li{
+    display: block;
+}
+#listaPelicula ul li   {
+    color: #0101DF;
+}
+#footer{
+      width:100%;
+    right:2%;
+    bottom: 1%;
+    top:90%;
+    position:fixed;
+}
+
+
+div.gm-style div div div div div 
+    {
+    
+        opacity: 0.9;
+    }
+    #infoMapa{
+        font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+        margin: 0px;
+        margin-left: 5%;
+        padding: 0px;
+        background-color: #0B0B3B;
+        -moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -khtml-border-radius: 10px 10px 10px 10px;
+    font-size:13px;
+    color:#fff;
+    }
+    #infoMapa  h3{
+        color:#fff;
+    }
+    #infoMapa span{
+
+        color:#fff
+    }
+
+    #tablaComplejos{
+            
+            font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+            color:#fff;
+            width:100%;
+            -moz-border-radius:0px 10px 10px 0px;   
+            -webkit-border-radius: 0px 10px 10px 0px; 
+        }
+        #tablaComplejos .comp{
+            text-align:center;
+            height:50px;
+            border-bottom: 1px solid #FFFFFF; 
+            min-height: 50px; 
+        }

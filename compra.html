@@ -1,0 +1,302 @@
+<!doctype html>
+<html>
+<head>	
+	<meta charset="utf-8" />
+	<title>Cine Colombia S.A.</title>
+	<script type="text/javascript" src="assets/js/cordova.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src="assets/js/LocalNotification.js"></script>
+	<script type="text/javascript" src="assets/js/date-es-MX.js"></script>
+	<script type='text/javascript' src='assets/js/knockout-2.3.0.js'></script>
+	<script type='text/javascript' src='assets/js/funciones.js'></script>
+
+	<link rel="stylesheet" type="text/css" href="assets/css/styleCompra.css">	
+
+	<script type="text/javascript">
+
+	jQuery(document).ready(function(){
+
+		$("#pagar").click(function(){
+			var nombrePelicula = $("#titulo").text();
+			var hora = $("#hora").text();
+			showAlert("Compra completada","Cine Colombia","Aceptar", 1);
+			newNotification(nombrePelicula,hora)
+		});
+
+		$("#compra input[type='radio']").click(function(){
+			$("#total").text("$ "+(($("#nBoletos").val()*precioBoleto())+($("#nBoletos").val()*2))+",000");
+		});
+
+    	$("#confirmarFuncion").hide();              
+    	$("#btnPagoCredito").click(function(){
+      if(getValues().length != 0){
+       $("#elegirFuncion").hide();
+          $("#confirmarFuncion").fadeToggle("slow");
+          $("#tipoTarjeta").text("Crédito");         
+          $("#numBoletos").text($("#nBoletos").val());
+          $("#asientos").text(getValues());                  
+          $("#costoBoleto").text("$ "+precioBoleto()+",000");
+          $("#totalBoletos").text("$ "+($("#nBoletos").val()*precioBoleto())+",000");
+          $("#totalServicio").text("$ "+($("#nBoletos").val()*2)+",000");
+          $("#compraTotal").text("$ "+(($("#nBoletos").val()*precioBoleto())+($("#nBoletos").val()*2))+",000");
+      }else{
+       showAlert("Selecciona tus asientos", "Cine Colombia", "Aceptar", 0);
+      }          
+               
+     });
+
+     $("#btnPagoCineco").click(function(){
+      if(getValues().length != 0){      
+       $("#elegirFuncion").hide();
+          $("#confirmarFuncion").fadeToggle("slow");
+          $("#tipoTarjeta").text("Tarjeta Cineco");         
+          $("#numBoletos").text($("#nBoletos").val());
+          $("#asientos").text(getValues());                  
+          $("#costoBoleto").text("$ "+precioBoleto()+",000");
+          $("#totalBoletos").text("$ "+($("#nBoletos").val()*precioBoleto())+",000");
+          $("#totalServicio").text("$ "+($("#nBoletos").val()*2)+",000");
+          $("#compraTotal").text("$ "+(($("#nBoletos").val()*precioBoleto())+($("#nBoletos").val()*2))+",000"); 
+         }else{
+          showAlert("Selecciona tus asientos", "Cine Colombia", "Aceptar", 0);
+         }        
+     });
+     
+     
+     
+
+    	$("#modificar").click(function(){
+    		$("#confirmarFuncion").hide();
+        	$("#elegirFuncion").fadeToggle("slow");
+    	});    	
+
+    	function getValues() {         
+         var allVals = [];
+         $("#compra input[type='checkbox']:checked").each(function() {
+           allVals.push($(this).val());           
+         });
+         return allVals;
+      }
+
+	});
+
+	
+	function showAlert(message, title, button, callback) {
+        navigator.notification.alert(
+            message,  // message
+            alertDismissed(callback),         // callback
+            title,            // title
+            button                  // buttonName
+        );
+    }
+
+    function alertDismissed(callback) {
+     if(callback==1)
+         window.location=("index.html");
+    }
+	
+	function precioBoleto(){
+    	var loc = $('input[name=localidad]:radio:checked').val();
+    	if(loc=="Preferencial")
+    		return "58"
+    	else
+    		return "42"
+    }
+
+
+	function boletos(valor){
+		var num = document.getElementById("nBoletos");
+		if($("#compra input[type='radio']").is(":checked")){
+			var localidad = $("#compra input[type='radio']").val();
+
+			if(valor=="mas"){
+				num.value = parseInt(num.value)+1;
+				$("#total").text("$ "+(($("#nBoletos").val()*precioBoleto())+($("#nBoletos").val()*2))+",000");
+			}else if(num.value>0){
+				num.value = num.value-1;
+			}
+
+		}else{
+			showAlert("Debe seleccionar una localidad", "Cine Colombia", "Aceptar",0);
+		}
+		check();
+	}
+
+	function checkboxlimit(checkgroup, limit){
+		var checkgroup=checkgroup
+		var limit=limit	
+		var valores = [];		
+		for (var i=0; i<checkgroup.length; i++){
+			checkgroup[i].onclick=function(){
+				var checkedcount=0
+				var first = null;
+				for (var i=0; i<checkgroup.length; i++){
+					if(checkgroup[i].checked){
+						checkedcount++;
+						if(checkedcount==1)
+							first = checkgroup[i];
+					}					
+					if (checkedcount>limit){						
+						this.checked=false;
+					}
+				}
+			}
+		}
+	}
+
+	function check(){			
+		checkboxlimit(document.getElementsByName("asiento"), document.getElementById("nBoletos").value);
+	}
+
+	function newNotification(pelicula,hora) {
+		console.log("Device ready");	
+		if (typeof plugins !== "undefined") {
+
+			var now = new Date();
+			now.setSeconds(now.getSeconds()+40);
+
+			plugins.localNotification
+					.add({
+						date : now,						
+						message : "Cine Colombia \n"+pelicula+" inicia a las " + hora,
+						//message : "Phonegap - Local Notification Subtitle comes after linebreak",
+						ticker : "Tu pelicula inicia a las " + hora,
+						repeatDaily : false,
+						id : 4
+					});
+		}
+	}
+
+
+	</script>
+
+</head>
+<body>
+	<img id="poster" data-bind="attr:{src: imagePath}"/>
+	<div id="header">
+		<img class="regreso" src="assets/images/regreso.png" alt="Regresar">
+	</div>	
+	<div id="fondo">		
+		<div id="elegirFuncion">
+			<form id="compra" action="confirmacion.html" method="get">
+				<div class="elegirHorario">
+					<table class="datosPago">
+						<tr>
+							<th colspan="2">Localidad</th>
+							<th>Servicio por boleta</th>
+							<th>Numero de boletas</th>
+						</tr>
+						<tbody>
+							<tr>
+								<td><input type="radio" name="localidad" value="General" data-bind="checked: localidad"></td>
+								<td>Compra general</td>
+								<td>$ 2.200</td>
+								<td>
+									<button id="mas" onclick="boletos('mas')" type="button"></button>
+									<input id="nBoletos" type="text" style="width:20px" value="0"/>
+									<button id="menos" onclick="boletos('menos')" type="button"></button>
+								</td>
+							</tr>
+							<tr>
+								<td><input type="radio" name="localidad" value="Preferencial" data-bind="checked: localidad"></td>
+								<td>Compra preferencial</td>
+								<td>$ 2.200</td>
+								<td><b>Total:</b> <span id="total">$ 0,000</span></td>
+							</tr>
+						</tbody>
+					</table>												
+				</div>
+				<div id="horarios" style="text-align:center">
+					<span>Medios de pago</span>	
+					<button type="button" id="btnPagoCredito"></button>
+					<button type="button" id="btnPagoCineco"></button>
+					<table id="asientosSala" onClick="check()">
+					</table>							
+					<span>Pantalla</span>							
+				</div>
+			</form>
+		</div>
+
+		<div id="confirmarFuncion">			
+				<div class="elegirHorario">					
+					<table class="datosPago">
+						<tr>
+							<td colspan="3">
+								<span><b id="titulo" class="enfasis" data-bind="text: titulo"></b></span>
+							</td>
+						</tr>
+						<tr>
+							<td data-bind="text: fecha"></td>
+							<td id="hora" data-bind="text: hora"></td>
+							<td data-bind="text: genero"></td>							
+						</tr>
+						<tr>
+							<td colspan="2" data-bind="text: clasificacion"></td>
+							<td data-bind="text: caracteristicas"></td>
+						</tr>						
+					</table>
+				</div>
+				<div id="horarios">							
+					<table id="confirmacion" class="datosPago">						
+						<tr>
+							<td><b>Documento cliente:</b></td>
+							<td data-bind="text: docCliente"></td>							
+						</tr>
+						<tr>
+							<td><b>Nombre completo:</b></td>
+							<td data-bind="text: nomCliente"></td>
+						</tr>
+						<tr>
+							<td><b>Código de seguridad:</b></td>
+							<td data-bind="text: codSeguridad"></td>
+						</tr>
+						<tr>
+							<td><b>Tipo de tarjeta:</b></td>
+							<td id="tipoTarjeta"></td>
+						</tr>
+						<tr>
+							<td><b>Localidad:</b></td>
+							<td id="loc" data-bind="text: localidad"></td>
+						</tr>
+						<tr>
+							<td><b>Número de boletos:</b></td>
+							<td id="numBoletos" ></td>
+						</tr>
+						<tr>
+							<td><b>Asientos:</b></td>
+							<td id="asientos"></td>
+						</tr>
+						<tr>
+							<td><b>Costo por boleto:</b></td>
+							<td id="costoBoleto"></td>
+						</tr>
+						<tr>
+							<td><b>Costo por servicio:</b></td>
+							<td data-bind="text: costoServicio"></td>
+							<td style="text-align:center"><button id="modificar"></button></td>
+						</tr>
+						<tr>
+							<td><b>Total por boletos:</b></td>
+							<td id="totalBoletos"></td>
+							<td style="text-align:center">Modificar</td>
+						</tr>
+						<tr>
+							<td><b>Total por servicio:</b></td>
+							<td id="totalServicio"></td>
+							<td style="text-align:center"><button id="pagar"></button></td>							
+						</tr>
+						<tr>
+							<td><b>Total:</b></td>
+							<td id="compraTotal"></td>
+							<td style="text-align:center">Pagar</td>							
+						</tr>												
+					</table>						
+				</div>
+		</div>
+
+	</div>
+	<div id="footer">
+		<img class="redes" src="assets/images/face.png" alt="Regresar">
+		<img class="redes" src="assets/images/twit.png" alt="Regresar">
+	</div>
+</body>
+</html>

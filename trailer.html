@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+	<div id="content">
+		<script type="text/javascript" language="javascript"> 
+			$(function() {
+					$('#trailer').attr('src', localStorage.video);
+        $('#trailer').reload();
+				// Find all YouTube videos
+				var $allVideos = $("iframe[src^='http://www.youtube.com']"),
+
+					// The element that is fluid width
+					$fluidEl = $("body");
+
+				// Figure out and save aspect ratio for each video
+				$allVideos.each(function() {
+
+					$(this)
+						.data('aspectRatio', this.height / this.width)
+						
+						// and remove the hard coded width/height
+						.removeAttr('height')
+						.removeAttr('width');
+
+				});
+				$(window).resize(function() {
+					var newWidth = $fluidEl.width();
+					
+					// Resize all videos according to their own aspect ratio
+					$allVideos.each(function() {
+
+						var $el = $(this);
+						$el
+							.width(newWidth)
+							.height(newWidth * $el.data('aspectRatio'));
+
+					});
+
+				// Kick off one resize to fix all videos on page load
+				}).resize();
+			});
+		</script>
+		<iframe class="video" id="trailer" height='50%' width='100%' frameborder="0" allowfullscreen src="http://www.youtube.com/embed/k10ETZ41q5o"></iframe>
+	</div>	
+</body>
+</html>

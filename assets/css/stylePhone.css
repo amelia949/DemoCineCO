@@ -1,0 +1,197 @@
+body{
+	font-size:11px;
+}
+#bodyUbicacion{
+   background-image: url("../image/FondoCartelera1.png");
+    background-repeat:repeat-y;
+    background-size: cover;
+     height:100%;
+    width:100%;
+}
+.imgA { position:fixed; width: 100%; height:100%; top: 0px; left: 0px; z-index: -2; } 
+.imgB { position:fixed; width: 100%; height:100%; top: 0px; left: 0px; z-index: -1; } 
+#header{
+	position:fixed;
+	background:url(../imgs/header.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	height:10%;
+	width:100%;
+	left:0px;
+	top:0px;
+}
+.regreso{
+	height:80%;
+	top:10%;
+}
+#footer{
+	width:98%;
+	left:1%;
+	right:1%;
+	top:88%;
+	height:10%;
+	position:fixed;
+	background:url(../imgs/footer.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.redes{
+	height:80%;
+	top:10%;
+}
+#content,#contentMapa{
+	position:fixed;
+	top:15%;
+	height:70%;
+	width:100%;
+	margin:0px;
+	 z-index:1;
+	 text-align: center;
+}
+.video{
+	margin-top: 0.5%;
+}
+.blankTop{
+	 display: inline-block; 
+	 margin: 0; 
+	 width:100%;
+	 height:70%;
+}
+.blankBottom{
+	 display: inline-block; 
+	 margin: 0; 
+	 width:100%;
+	 height:10%;
+}
+p{
+  margin: 0;
+  }
+#detalle{
+	left:2%;
+	right:2%;
+	width:96%;
+	margin-top: 0.5%;
+	opacity:0.8;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 1%;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #afaeb4; 
+	color:#fff;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    font-style: normal;
+    text-align: left;
+    
+}
+.trailer{
+	position:relative;
+	right:2%;
+	left:80%;
+	width:18%;
+}
+.row{
+	background:url(../imgs/boletos-box.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+}
+.dias{
+	left:2%;
+	right:2%;
+	width:96%;
+	margin-top: 2%;
+	background:url(../imgs/barrahorarios.png);
+	background-repeat:repeat-x;
+	list-style-type:none;
+	padding:0;
+	overflow:scroll;
+	white-space: nowrap;
+}
+.dias li{
+	color:#fff;
+	height:97px;
+	width:80px;
+	text-align:center;
+	white-space: initial;
+	display: inline-block;
+}
+.dias li.selected{
+	background:url(../imgs/globohorarios.png);
+	background-repeat:no-repeat;
+}
+#horarios{
+	left:2%;
+	right:2%;
+	width:96%;
+	margin-top: 0.5%;
+	opacity:0.8;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #afaeb4; 
+}
+#mtable{
+	margin: auto;
+	width: 100%%;
+	color: #FFFFFF; 
+	border-collapse:collapse;
+}
+
+#mtable .fin{
+	margin: auto;
+	border-bottom: 1px solid #FFFFFF; 
+	min-height: 50px; 
+}
+
+#mtable>tbody>tr:last-child>td{ border-bottom: none;}
+#mtable>tbody>tr>td:last-child{ 
+	border-bottom: none;
+	width: 10%;
+}
+#mtable a{
+	color: #FFFFFF;
+	margin: 10%;
+	text-decoration: none;
+}
+#mapa{
+	float:left;
+	height:90%;
+	width:50%;
+}
+#flechamenu{
+ width:100%;
+    right:2%;
+    bottom: 1%;
+    top:90%;
+    position:fixed;
+}
+#lista{
+	background:url(../imgs/localizadorbox.png);
+	background-repeat:no-repeat;
+	background-size: cover;
+	background-position:center;
+	float:left;
+	height:90%;
+	width:45%;
+	overflow-y:scroll;
+
+}
+#tablaComplejos{
+	font-size: 11px;
+	font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+	color:#fff;
+	width:100%;
+	-moz-border-radius:0px 10px 10px 0px; 	
+	-webkit-border-radius: 0px 10px 10px 0px; 
+}
+#tablaComplejos .comp{
+	text-align:center;
+	height:50px;
+	border-bottom: 1px solid #FFFFFF; 
+	min-height: 50px; 
+}
+
+#mtable>tbody>tr:last-child>td{ border-bottom: none;}

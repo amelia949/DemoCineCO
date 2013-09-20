@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/js/date-es-MX.js"></script>
+	<script type="text/javascript" src="assets/js/knockout-2.3.0.js"></script>
+	<script type="text/javascript" src="assets/js/jquery.touchSwipe.min.js"></script>
+	<script type="text/javascript" src="assets/js/functions.js"></script>	
+	<link href="assets/css/main.css" type="text/css" rel="stylesheet" />
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+<script id='code_1'>
+$(function() {			
+		$("#divVideo").hide();
+		$(".test4").swipe( { swipeStatus:swipe2, allowPageScroll:"vertical"} );
+
+		var cant = 0;
+		var total = $(".blankTop").height()+150;
+		var mov = 0;
+		var aux = 0;
+	
+		function swipe2(event, phase, direction, distance) {
+			if(phase == "start"){
+				aux = 0;
+			}if(phase=="move" && direction=="up"){
+				if( aux < distance && mov <= total){
+					mov += distance;
+					aux = distance;
+				}else if( aux > distance && mov >= 0){
+					mov -= distance;
+					aux = distance;
+				}
+				if(mov >= 0 && mov <= total){
+					cant = total-mov;
+					alpha = cant/total;
+					$(imgNoBlur).css('opacity', alpha);
+				}
+			}
+			if(phase=="move" && direction=="down"){
+				if( aux < distance && mov >= 0){
+				//$(this).text( phase +" you have swiped " + distance + "px in direction:" + direction + " aux: "+aux +" mov: "+mov +" aplha: "+alpha);
+					mov -= distance;
+					aux = distance;
+				}else if( aux > distance && mov <= total){
+					mov += distance;
+					aux = distance;
+				}
+				if(mov >= 0 && mov <= total){
+					cant = total-mov;
+					alpha = cant/total;
+					
+					$(imgNoBlur).css('opacity', alpha);
+				}
+			}
+		}
+		
+		$(".trailer").click(function() {
+				$('.video').attr('src', localStorage.video);
+		        //$('.video').reload();
+				$(divVideo).show();
+				$("#divVideo").css("z-index",1);
+   	 			$("#content").css("z-index",-1);
+			});
+		$("#cerrar").click(function() {
+				$("#divVideo").css("z-index",1);
+				
+   	 			$("#content").css("z-index",-1);
+   	 			$('.video').attr('src', "");
+		        //$('.video').reload();
+				$(divVideo).hide();
+			});
+	});
+</script>
+	<div id="contLoading" align="center" style="border-radius:10px; -moz-border-radius:10px;-webkit-border-radius:10px; 
+    color:#BDBDBD;margin-top:20%;margin-left :20%;position: fixed; border:1px solid #BDBDBD;padding:10px 40px; width:100px;
+    height:100px;">
+        <img src="assets/image/loading61.gif">
+        <br>
+        <b>Obteniendo</b>
+        <br>
+        <b>Informacion</b>
+    </div>
+    
+    <div id="divVideo" align="center" style="border-radius:10px; -moz-border-radius:10px;-webkit-border-radius:10px; 
+    color:#BDBDBD;margin-top:15%;margin-left :3.5%;position: fixed; border:1px solid #BDBDBD;padding:5px 20px; width:80%;
+    height:50% ; background-color: #BDBDBD">
+    	<div align="right"><img id="cerrar" alt="" src="assets/imgs/close.png"></div>
+    	
+        <iframe class="video" height='80%' width='100%' frameborder="0" allowfullscreen src=""></iframe>
+    </div>
+    
+	<img id="imgBlur" class="imgA" data-bind="attr:{src: imagePathBlur}" >
+	<img id="imgNoBlur" class="imgB" data-bind="attr:{src: imagePath}" >
+	<div id="header">
+		<img id="regresoEstreno" src="assets/imgs/regreso.png" alt="Regresar">
+	</div>
+	<div id="content" class="test4">
+		<div class="blankTop"></div>
+		<div align="center"><img id="imgArriba" src="assets/images/arriba.png"></div>
+		<div id="detalle">
+			<p data-bind="text: titulo"></p>
+			<p data-bind="text: original()"></p>
+			<p><b>G&eacute;nero:</b> <span data-bind="text: genero"/></p>
+			<p><b>Clasificaci&oacute;n:</b> <span data-bind="text: clasificacion"/></p>
+			<p><b>Duraci&oacute;n:</b> <span data-bind="text: duracion"/> min</p>
+			<p><b>Actores:</b> <span data-bind="text: artistas"/> </p>
+			<p><b>Director:</b> <span data-bind="text: director"/> </p>
+			<p><b>Sinopsis:</b></p> 
+			<p><span data-bind="text:sinopsis"/></p>
+			
+				<img class="trailer" src="assets/imgs/trailer.png" alt="Trailer">
+			
+		</div>
+		
+		<div class="blankBottom"></div>
+	</div>
+	<div id="footer">
+		<img class="redes" src="assets/imgs/face.png" alt="Regresar">
+		<img class="redes" src="assets/imgs/twit.png" alt="Regresar">
+	</div>
+</body>
+</html>

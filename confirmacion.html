@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=2"/>
+	<meta charset="utf-8" />
+	<title>Cine Colombia S.A.</title>
+	
+	<script src="assets/js/jquery-1.10.2.min.js"></script>
+	<script type='text/javascript' src='assets/js/knockout-2.3.0.js'></script>
+	<script type='text/javascript' src='assets/js/funciones.js'></script>
+	<link rel="stylesheet" type="text/css" href="assets/css/styleCompra.css">	
+
+</head>
+<body>
+	<img id="poster" data-bind="attr:{src: imagePath}"/>
+	<div id="header">
+		<img class="regreso" src="assets/images/regreso.png" alt="Regresar">
+	</div>
+	<div id="fondo">			
+				<div id="elegirHorario">					
+					<table class="datosPago">
+						<tr>
+							<td colspan="3">
+								<span><b class="enfasis" data-bind="text: titulo"></b></span>
+							</td>
+						</tr>
+						<tr>
+							<td data-bind="text: fecha"></td>
+							<td data-bind="text: hora"></td>
+							<td data-bind="text: genero"></td>							
+						</tr>
+						<tr>
+							<td colspan="2" data-bind="text: clasificacion"></td>
+							<td data-bind="text: caracteristicas"></td>
+						</tr>						
+					</table>
+				</div>
+				<div id="horarios">							
+					<table class="datosPago">						
+						<tr>
+							<td><b>Documento cliente:</b></td>
+							<td data-bind="text: docCliente"></td>		
+						</tr>
+						<tr>
+							<td><b>Nombre completo:</b></td>
+							<td data-bind="text: nomCliente"></td>
+						</tr>
+						<tr>
+							<td><b>Código de seguridad:</b></td>
+							<td data-bind="text: codSeguridad"></td>
+						</tr>
+						<tr>
+							<td><b>Tipo de tarjeta:</b></td>
+							<td data-bind="text: tipoTarjeta"></td>
+						</tr>
+						<tr>
+							<td><b>Localidad:</b></td>
+							<td data-bind="text: localidad"></td>
+						</tr>
+						<tr>
+							<td><b>Número de boletos:</b></td>
+							<td data-bind="text: noBoletos"></td>
+						</tr>
+						<tr>
+							<td><b>Asientos:</b></td>
+							<td data-bind="text: asientos"></td>
+						</tr>
+						<tr>
+							<td><b>Costo por boleto:</b></td>
+							<td data-bind="text: costoBoleto"></td>
+						</tr>
+						<tr>
+							<td><b>Costo por servicio:</b></td>
+							<td data-bind="text: costoServicio"></td>
+						</tr>
+						<tr>
+							<td><b>Total por boletos:</b></td>
+							<td data-bind="text: totalBoletos"></td>
+						</tr>
+						<tr>
+							<td><b>Total por servicio:</b></td>
+							<td data-bind="text: totalServicio"></td>
+						</tr>
+						<tr>
+							<td><b>Total IVA 16%:</b></td>
+							<td data-bind="text: total"></td>
+							<td style="text-align:center"><button id="pagar"></button></td>
+						</tr>						
+						<tr>
+							<td></td>
+							<td></td>
+							<td style="text-align:center">Pagar</td>
+						</tr>
+					</table>						
+				</div>
+	</div>
+	<div id="footer">
+		<img class="redes" src="assets/images/face.png" alt="Regresar">
+		<img class="redes" src="assets/images/twit.png" alt="Regresar">
+	</div>
+</body>
+</html>

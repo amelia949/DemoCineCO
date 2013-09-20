@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>CineCo </title>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+	<script src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="assets/js/knockout-2.3.0.js"></script>
+	<script type="text/javascript" src="assets/js/mapa.js"></script>
+	<link type="text/css" rel="stylesheet" href="assets/css/stylePhone.css" media="all and (min-width: 0px) and (max-width: 768px)"/>
+	<link type="text/css" rel="stylesheet" href="assets/css/style.css" media="all and (min-width: 768px)"/>
+	<link rel="stylesheet" href="assets/css/menuPhone.css" media="all and (min-width: 0px) and (max-width: 768px)"/>
+    <link rel=stylesheet href="assets/css/menu.css" media="all and (min-width: 768px)"/>
+    <script src="assets/js/menu.js"></script>
+	<style type="text/css">
+	body{
+	color:#fff
+	}	
+	 div.gm-style div div div div div 
+	{
+	
+		opacity: 0.9;
+	}
+
+
+	#infoMapa{
+		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		margin: 0px;
+		margin-left: 5%;
+		padding: 0px;
+		background-color: #0B0B3B;
+		-moz-border-radius:10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -khtml-border-radius: 10px 10px 10px 10px;
+    font-size:13px;
+	}
+	#infoMapa  h3{
+		color:#fff;
+	}
+	#infoMapa span{
+
+		color:#FFBF00
+	}
+
+	</style>
+</head>
+<body id="bodyUbicacion">
+<div id="contenido">
+	<div align="center">
+	    	<img width=100%  alt="encabezado" src="assets/image/headerCartelera1.png"></img>
+	   	</div>
+	<div class=".general" id="content">
+		
+		<div id="lista" >
+			<table id="tablaComplejos">
+				 
+				<tbody data-bind="foreach: { data: complejos, as: 'complejo' } ">
+					<tr data-bind="click: $root.showMarker">
+						<td class="comp" data-bind="text: complejo.nombre"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<div id="mapa"></div>
+		<div id="flechamenu" align="center"> 
+           	<img   alt="footer" src="assets/image/flechasCartelera.png"></img>
+        </div>
+	</div>
+	<div id="menu" >
+        <ul id="navigation">
+             <li id="MCartelera"class="cartelera"><span>Cartelera</span></li>
+             <li id="MEstrenos" class="estrenos"><span>Estrenos</span></li>
+             <li id="MComplejos"class="complejos"><span>Complejos</span></li>
+             <li id="MFestivales"class="festivales"><span>Festivales</span></li>
+        </ul>
+        <div id="down" align= "center"> 
+            <img  alt="down" src="assets/image/flechasmenu.png"></img>
+        </div>
+    </div>  
+</div>
+</body>
+</html>
